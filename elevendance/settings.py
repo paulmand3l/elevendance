@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -45,6 +47,20 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages"
+)
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 ROOT_URLCONF = 'elevendance.urls'
@@ -57,8 +73,8 @@ WSGI_APPLICATION = 'elevendance.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'elevendance',
     }
 }
 
@@ -80,3 +96,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+################################
+# Python-social-auth settings
+################################
+
+AUTHENTICATION_BACKENDS += (
+    'social.backends.google.GoogleOAuth2',
+    'social.backends.facebook.FacebookOAuth2'
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '209892842552553'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'f4d957f631188bf6c0bccf0f08abb8f8'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+)
