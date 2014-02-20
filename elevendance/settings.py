@@ -29,6 +29,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+MY_APPS = (
+    'organizer',
+)
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,8 +41,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
+    'recurrence',
+    'django_extensions',
+    'annoying',
     'south',
-)
+) + MY_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
