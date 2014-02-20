@@ -73,8 +73,8 @@ WSGI_APPLICATION = 'elevendance.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'elevendance',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'elevendance.db',
     }
 }
 
