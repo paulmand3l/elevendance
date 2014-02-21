@@ -16,3 +16,6 @@ class Formula(models.Model):
   # More convenience fields for slightly more complex formulas
   after_heads = models.IntegerField("only start counting attendees after this many", default=0)
   pay_cap = models.IntegerField("the max amount they can make", default=100000)
+
+  # For seriously complex formulas, custom formulas are enabled
+  formula = models.TextField(blank=True, null=True)
