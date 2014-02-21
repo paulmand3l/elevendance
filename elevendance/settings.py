@@ -30,7 +30,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 MY_APPS = (
-    'organizer',
 )
 
 INSTALLED_APPS = (
