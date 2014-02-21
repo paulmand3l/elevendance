@@ -30,6 +30,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 MY_APPS = (
+    'organization',
+    'scheduling',
+    'payroll',
+    'checkin',
 )
 
 INSTALLED_APPS = (
