@@ -26,6 +26,21 @@ elevendanceControllers.controller('RegistrationController', ['$scope',
       {name: 'Nicole Trissell', paid: '0', comp: true}
     ];
 
+    $scope.defaultPrice = 5;
+
+    $scope.addAttendee = function() {
+      console.log("Adding person");
+      $scope.attendees.unshift({
+        name: $scope.attendee.name,
+        email: $scope.attendee.email,
+        paid: $scope.attendee.paid
+      });
+    };
+
+    $scope.useCustomMoney = function() {
+      $scope.customMoney = true;
+    };
+
   }]);
 
 elevendanceControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',

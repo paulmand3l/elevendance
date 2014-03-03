@@ -1,14 +1,20 @@
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <h1>{{ message }}</h1>
   </div>
-  <div class="col-md-8">
-    <form class="form-inline">
-      <input type="text" name="name" placeholder="name" />
-      <input type="text" name="email" placeholder="email" />
-      <input type="checkbox" name="comp" />
+  <div class="col-md-9">
+    <form ng-submit="addAttendee()" class="form form-inline">
+      <input type="text" class="form-control" ng-model="attendee.name" placeholder="Name" />
+      <input type="text" class="form-control" ng-model="attendee.email" placeholder="Email" />
+      <span ng-click="useCustomMoney()" ng-show="!customMoney">{{ defaultPrice | currency }}</span>
+      <input ng-show="customMoney" class="form-control" ng-model="attendee.paid" type="number" value="{{ defaultPrice }}"/>
+    </form>
     <table class="table table-hover">
-      <tr>
-        <td><input type="text" placeholder="Name" />
+      <tr ng-repeat="person in attendees">
+        <td>{{ person.name }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.paid | currency }}</td>
+      </tr>
+    </table>
   </div>
 </div>
