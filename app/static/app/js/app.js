@@ -13,8 +13,16 @@ elevendanceApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/', {
-        templateUrl: 'partials/home.html',
+        templateUrl: '/static/app/partials/home.html',
         controller: 'PhoneListCtrl'
+      }).
+      when('/registration', {
+        templateUrl: '/static/app/partials/registration.html',
+        controller: 'RegistrationController'
+      }).
+      when('/scheduling', {
+        templateUrl: '/static/app/partials/scheduling.html',
+        controller: 'SchedulingController'
       }).
       otherwise({
         redirectTo: '/'

@@ -4,7 +4,7 @@
 
 var elevendanceControllers = angular.module('elevendanceControllers', []);
 
-elevendanceControllers.controller('navController', ['$scope',
+elevendanceControllers.controller('NavController', ['$scope',
   function($scope) {
     $scope.orgs = [
       {name: 'Beyond Blues'},
@@ -16,6 +16,18 @@ elevendanceControllers.controller('navController', ['$scope',
     $scope.username = 'pmandel';
   }]);
 
+elevendanceControllers.controller('RegistrationController', ['$scope',
+  function($scope) {
+    $scope.message = "Hello, world!";
+
+    $scope.attendees = [
+      {name: 'Paul Mandel', paid: '5'},
+      {name: 'Brenda Russell', paid: '5'},
+      {name: 'Nicole Trissell', paid: '0', comp: true}
+    ];
+
+  }]);
+
 elevendanceControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
   function($scope, $routeParams, Phone) {
     $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
@@ -24,5 +36,5 @@ elevendanceControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 
 
     $scope.setImage = function(imageUrl) {
       $scope.mainImageUrl = imageUrl;
-    }
+    };
   }]);
