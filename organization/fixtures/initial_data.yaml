@@ -1,0 +1,31 @@
+- model: organization.Organization
+  pk: 1
+  fields:
+    name: Beyond Blues
+
+- model: organization.Venue
+  pk: 1
+  fields:
+    organization: 1
+    name: Friday Night Blues
+
+- model: organization.Role
+  pk: 1
+  fields:
+    venue: 1
+    name: Instructor
+    formula: 1
+
+- model: organization.Role
+  pk: 2
+  fields:
+    venue: 1
+    name: DJ
+    formula: 2
+
+- model: organization.Membership
+  pk: 1
+  fields:
+    organization: 1
+    person: 1
+    notes: What a bamf

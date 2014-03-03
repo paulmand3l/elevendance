@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" ng-app="elevendanceApp">
+<head>
+  <meta charset="utf-8">
+  <title>11Dance</title>
+  <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <script src="/static/lib/angular/angular.js"></script>
+  <script src="/static/lib/angular/angular-resource.js"></script>
+  <script src="/static/lib/angular/angular-route.js"></script>
+
+  <script src="/static/app/js/app.js"></script>
+  <script src="/static/app/js/animations.js"></script>
+  <script src="/static/app/js/controllers.js"></script>
+  <script src="/static/app/js/filters.js"></script>
+  <script src="/static/app/js/services.js"></script>
+</head>
+<body>
+
+  <header class="navbar navbar-static-top navbar-default" role="banner" data-ng-controller="navController">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="../" class="navbar-brand">11Dance</a>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ username }} <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li ng-repeat="org in orgs"><a href="#">{{ org.name }}</a></li>
+              <li class="divider"></li>
+              <li><a href="/settings">Account Settings</a></li>
+              <li><a href="/sign-out">Sign out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="view-container">
+    <div ng-view class="view-frame"></div>
+  </div>
+
+  <script src="/static/admin/js/jquery.js"></script>
+  <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

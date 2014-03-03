@@ -1,0 +1,38 @@
+- model: scheduling.Dance
+  pk: 1
+  fields:
+    organization: 1
+    venue: 1
+    price: 5
+    start: 2014-02-28 22:00:00
+    end: 2014-03-01 02:00:00
+
+- model: scheduling.Lesson
+  pk: 1
+  fields:
+    organization: 1
+    venue: 1
+    dance: 1
+    title: Blues 101
+    description: Learn the basic fundamentals of blues.
+    level: 1
+    start: 2014-02-28 21:00:00
+    end: 2014-02-28 22:00:00
+
+- model: scheduling.Timeslot
+  pk: 1
+  fields:
+    dance: 1
+    person: 1
+    role: 2
+    start: 2014-02-28 22:00:00
+    end: 2014-02-28 23:00:00
+
+- model: scheduling.Timeslot
+  pk: 2
+  fields:
+    lesson: 1
+    person: 1
+    role: 1
+    start: 2014-02-28 21:00:00
+    end: 2014-02-28 22:00:00

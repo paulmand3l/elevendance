@@ -1,0 +1,11 @@
+- model: payroll.Formula
+  pk: 1
+  fields:
+    per_hour: 35
+    per_head: 3
+    after_heads: 15
+
+- model: payroll.Formula
+  pk: 2
+  fields:
+    per_hour: 25
